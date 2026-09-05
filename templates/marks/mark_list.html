@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2>Student Marks List</h2>
+
+    <br>
+
+    <a href="/marks/add/" class="btn">
+        Add Marks
+    </a>
+
+    <br><br>
+
+    <table border="1" width="100%" cellpadding="10">
+
+        <tr>
+            <th>Student</th>
+            <th>Subject</th>
+            <th>Internal</th>
+            <th>Assignment</th>
+            <th>Attendance</th>
+            <th>Semester</th>
+            <th>Total</th>
+            <th>Percentage</th>
+        </tr>
+
+        {% for mark in marks %}
+
+        <tr>
+
+            <td>{{ mark.student.full_name }}</td>
+            <td>{{ mark.subject }}</td>
+            <td>{{ mark.internal_mark }}</td>
+            <td>{{ mark.assignment_mark }}</td>
+            <td>{{ mark.attendance_mark }}</td>
+            <td>{{ mark.semester_exam_mark }}</td>
+            <td>{{ mark.total }}</td>
+            <td>{{ mark.percentage }}%</td>
+
+        </tr>
+
+        {% empty %}
+
+        <tr>
+
+            <td colspan="8" align="center">
+
+                No Marks Found
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+{% endblock %}

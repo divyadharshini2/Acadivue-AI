@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2>Edit University</h2>
+
+    <br>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <label>University Name</label><br>
+        <input type="text" name="name" value="{{ university.name }}" required>
+        <br><br>
+
+        <label>University Code</label><br>
+        <input type="text" name="code" value="{{ university.code }}" required>
+        <br><br>
+
+        <label>University Type</label><br>
+
+        <select name="university_type">
+
+            <option value="State" {% if university.university_type == "State" %}selected{% endif %}>State</option>
+
+            <option value="Central" {% if university.university_type == "Central" %}selected{% endif %}>Central</option>
+
+            <option value="Autonomous" {% if university.university_type == "Autonomous" %}selected{% endif %}>Autonomous</option>
+
+            <option value="Deemed" {% if university.university_type == "Deemed" %}selected{% endif %}>Deemed</option>
+
+            <option value="Private" {% if university.university_type == "Private" %}selected{% endif %}>Private</option>
+
+        </select>
+
+        <br><br>
+
+        <label>Total Semesters</label><br>
+        <input type="number" name="total_semesters" value="{{ university.total_semesters }}" required>
+        <br><br>
+
+        <label>CGPA Scale</label><br>
+
+        <select name="cgpa_scale">
+
+            <option value="10" {% if university.cgpa_scale == "10" %}selected{% endif %}>10 Point</option>
+
+            <option value="4" {% if university.cgpa_scale == "4" %}selected{% endif %}>4 Point</option>
+
+        </select>
+
+        <br><br>
+
+        <label>Website</label><br>
+        <input type="url" name="website" value="{{ university.website }}">
+        <br><br>
+
+        <label>Email</label><br>
+        <input type="email" name="email" value="{{ university.email }}" required>
+        <br><br>
+
+        <label>Phone</label><br>
+        <input type="text" name="phone" value="{{ university.phone }}" required>
+        <br><br>
+
+        <label>Address</label><br>
+
+        <textarea name="address" rows="4">{{ university.address }}</textarea>
+
+        <br><br>
+
+        <button type="submit">
+            Update University
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

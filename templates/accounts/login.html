@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="login">
+
+    <h2>Login to Acadivue AI</h2>
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <label>Email</label><br>
+        <input type="email" name="email" placeholder="Enter your email"><br><br>
+
+        <label>Password</label><br>
+        <input type="password" name="password" placeholder="Enter your password"><br><br>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+</section>
+
+{% endblock %}

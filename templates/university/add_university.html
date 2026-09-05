@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2>Add University</h2>
+
+    <br>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <label>University Name</label><br>
+        <input type="text" name="name" required>
+        <br><br>
+
+        <label>University Code</label><br>
+        <input type="text" name="code" required>
+        <br><br>
+
+        <label>University Type</label><br>
+        <select name="university_type">
+
+            <option value="State">State</option>
+            <option value="Central">Central</option>
+            <option value="Autonomous">Autonomous</option>
+            <option value="Deemed">Deemed</option>
+            <option value="Private">Private</option>
+
+        </select>
+
+        <br><br>
+
+        <label>Total Semesters</label><br>
+        <input type="number" name="total_semesters" required>
+        <br><br>
+
+        <label>CGPA Scale</label><br>
+
+        <select name="cgpa_scale">
+
+            <option value="10">10 Point</option>
+            <option value="4">4 Point</option>
+
+        </select>
+
+        <br><br>
+
+        <label>Website</label><br>
+        <input type="url" name="website">
+        <br><br>
+
+        <label>Email</label><br>
+        <input type="email" name="email" required>
+        <br><br>
+
+        <label>Phone</label><br>
+        <input type="text" name="phone" required>
+        <br><br>
+
+        <label>Address</label><br>
+        <textarea name="address" rows="4"></textarea>
+        <br><br>
+
+        <button type="submit">
+            Save University
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

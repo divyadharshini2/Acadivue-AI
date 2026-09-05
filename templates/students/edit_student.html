@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2>Edit Student</h2>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <label>Full Name</label><br>
+        <input type="text" name="full_name" value="{{ student.full_name }}" required><br><br>
+
+        <label>Register Number</label><br>
+        <input type="text" name="register_number" value="{{ student.register_number }}" required><br><br>
+
+        <label>Email</label><br>
+        <input type="email" name="email" value="{{ student.email }}" required><br><br>
+
+        <label>Department</label><br>
+        <input type="text" name="department" value="{{ student.department }}" required><br><br>
+
+        <label>Year</label><br>
+        <select name="year" required>
+            <option value="I" {% if student.year == "I" %}selected{% endif %}>I Year</option>
+            <option value="II" {% if student.year == "II" %}selected{% endif %}>II Year</option>
+            <option value="III" {% if student.year == "III" %}selected{% endif %}>III Year</option>
+            <option value="IV" {% if student.year == "IV" %}selected{% endif %}>IV Year</option>
+        </select><br><br>
+
+        <label>Semester</label><br>
+        <select name="semester" required>
+            <option value="1" {% if student.semester == "1" %}selected{% endif %}>Semester 1</option>
+            <option value="2" {% if student.semester == "2" %}selected{% endif %}>Semester 2</option>
+            <option value="3" {% if student.semester == "3" %}selected{% endif %}>Semester 3</option>
+            <option value="4" {% if student.semester == "4" %}selected{% endif %}>Semester 4</option>
+            <option value="5" {% if student.semester == "5" %}selected{% endif %}>Semester 5</option>
+            <option value="6" {% if student.semester == "6" %}selected{% endif %}>Semester 6</option>
+            <option value="7" {% if student.semester == "7" %}selected{% endif %}>Semester 7</option>
+            <option value="8" {% if student.semester == "8" %}selected{% endif %}>Semester 8</option>
+        </select><br><br>
+
+        <label>Section</label><br>
+        <input type="text" name="section" value="{{ student.section }}" required><br><br>
+
+        <label>Gender</label><br>
+        <select name="gender" required>
+            <option value="Male" {% if student.gender == "Male" %}selected{% endif %}>Male</option>
+            <option value="Female" {% if student.gender == "Female" %}selected{% endif %}>Female</option>
+            <option value="Other" {% if student.gender == "Other" %}selected{% endif %}>Other</option>
+        </select><br><br>
+
+        <label>Date of Birth</label><br>
+        <input type="date" name="date_of_birth" value="{{ student.date_of_birth|date:'Y-m-d' }}" required><br><br>
+
+        <label>Phone Number</label><br>
+        <input type="text" name="phone" value="{{ student.phone }}" required><br><br>
+
+        <label>Address</label><br>
+        <textarea name="address" rows="4" required>{{ student.address }}</textarea><br><br>
+
+        <button type="submit">Update Student</button>
+
+        <a href="/students/" class="btn">Back</a>
+
+    </form>
+
+</div>
+
+{% endblock %}

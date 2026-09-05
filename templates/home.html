@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero">
+
+    <h1>Welcome to Acadivue AI</h1>
+
+    {% if user.is_authenticated %}
+        <p>
+            Welcome,
+            <strong>{{ user.first_name }}</strong>
+        </p>
+    {% endif %}
+
+    <p>
+        See Performance. Predict Risk. Improve Outcomes.
+    </p>
+
+    <a href="#" class="btn">Get Started</a>
+
+</section>
+
+<!-- About Section -->
+<section class="about">
+
+    <h2>About Acadivue AI</h2>
+
+    <p>
+        Acadivue AI is an Intelligent Academic Performance & Risk Analytics
+        Platform that helps students and faculty analyze academic performance,
+        predict future outcomes, identify at-risk students, and provide
+        data-driven recommendations using Artificial Intelligence and Machine
+        Learning.
+    </p>
+
+</section>
+
+<!-- Features Section -->
+<section class="features">
+
+    <h2>Key Features</h2>
+
+    <div class="feature-container">
+
+        <div class="feature-card">
+            <h3>Performance Analysis</h3>
+            <p>Analyze student academic performance using data analytics.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Risk Detection</h3>
+            <p>Identify students who are academically at risk.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>ML Prediction</h3>
+            <p>Predict future academic performance using Machine Learning.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Interactive Dashboard</h3>
+            <p>Visualize academic data through charts and dashboards.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- How It Works -->
+<section class="how-it-works">
+
+    <h2>How Acadivue AI Works</h2>
+
+    <div class="steps">
+
+        <div class="step">
+            <h3>1. Collect Academic Data</h3>
+            <p>
+                Attendance, Internal Marks, Assignments,
+                Study Hours and Previous Semester Results
+                are collected.
+            </p>
+        </div>
+
+        <div class="step">
+            <h3>2. Analyze Data</h3>
+            <p>
+                The system analyzes student academic data
+                using Python and Data Analytics.
+            </p>
+        </div>
+
+        <div class="step">
+            <h3>3. Predict Performance</h3>
+            <p>
+                Machine Learning predicts future academic
+                performance and identifies risk levels.
+            </p>
+        </div>
+
+        <div class="step">
+            <h3>4. Improve Outcomes</h3>
+            <p>
+                Students receive AI-powered recommendations
+                to improve their academic performance.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Call To Action -->
+<section class="cta">
+
+    <h2>Start Your Academic Journey with Acadivue AI</h2>
+
+    <p>
+        Analyze your performance,
+        predict academic outcomes,
+        and receive personalized recommendations
+        to improve your success.
+    </p>
+
+    <a href="#" class="btn">Explore Dashboard</a>
+
+</section>
+
+<!-- Statistics -->
+<section class="statistics">
+
+    <h2>Platform Highlights</h2>
+
+    <div class="stats-container">
+
+        <div class="stat-card">
+            <h3>1000+</h3>
+            <p>Student Records</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>50+</h3>
+            <p>Faculty Members</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>20+</h3>
+            <p>Subjects</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>AI Powered</h3>
+            <p>Performance Prediction</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Contact -->
+<section class="contact">
+
+    <h2>Contact Us</h2>
+
+    <p>Email : support@acadivueai.com</p>
+
+    <p>Project : Acadivue AI</p>
+
+    <p>Tagline : See Performance. Predict Risk. Improve Outcomes.</p>
+
+</section>
+
+<!-- Footer -->
+<footer>
+
+    <p>
+        © 2026 Acadivue AI |
+        Intelligent Academic Performance & Risk Analytics Platform
+    </p>
+
+</footer>
+
+{% endblock %}

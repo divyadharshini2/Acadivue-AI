@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2>Add Student Marks</h2>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <label>Select Student</label><br>
+
+        <select name="student" required>
+
+            <option value="">Select Student</option>
+
+            {% for student in students %}
+                <option value="{{ student.id }}">
+                    {{ student.full_name }}
+                </option>
+            {% endfor %}
+
+        </select>
+
+        <br><br>
+
+        <label>Subject</label><br>
+        <input type="text" name="subject" required>
+
+        <br><br>
+
+        <label>Internal Mark</label><br>
+        <input type="number" name="internal_mark" min="0" max="25" required>
+
+        <br><br>
+
+        <label>Assignment Mark</label><br>
+        <input type="number" name="assignment_mark" min="0" max="10" required>
+
+        <br><br>
+
+        <label>Attendance Mark</label><br>
+        <input type="number" name="attendance_mark" min="0" max="5" required>
+
+        <br><br>
+
+        <label>Semester Exam Mark</label><br>
+        <input type="number" name="semester_exam_mark" min="0" max="60" required>
+
+        <br><br>
+
+        <button type="submit">
+            Save Marks
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

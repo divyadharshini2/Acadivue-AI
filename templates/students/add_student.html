@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2>Add New Student</h2>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <label>Full Name</label><br>
+        <input type="text" name="full_name" required><br><br>
+
+        <label>Register Number</label><br>
+        <input type="text" name="register_number" required><br><br>
+
+        <label>Email</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <label>Department</label><br>
+        <input type="text" name="department" required><br><br>
+
+        <label>Year</label><br>
+        <select name="year" required>
+            <option value="">Select Year</option>
+            <option value="I">I Year</option>
+            <option value="II">II Year</option>
+            <option value="III">III Year</option>
+            <option value="IV">IV Year</option>
+        </select><br><br>
+
+        <label>Semester</label><br>
+        <select name="semester" required>
+            <option value="">Select Semester</option>
+            <option value="1">Semester 1</option>
+            <option value="2">Semester 2</option>
+            <option value="3">Semester 3</option>
+            <option value="4">Semester 4</option>
+            <option value="5">Semester 5</option>
+            <option value="6">Semester 6</option>
+            <option value="7">Semester 7</option>
+            <option value="8">Semester 8</option>
+        </select><br><br>
+
+        <label>Section</label><br>
+        <input type="text" name="section" required><br><br>
+
+        <label>Gender</label><br>
+        <select name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select><br><br>
+
+        <label>Date of Birth</label><br>
+        <input type="date" name="date_of_birth" required><br><br>
+
+        <label>Phone Number</label><br>
+        <input type="text" name="phone" required><br><br>
+
+        <label>Address</label><br>
+        <textarea name="address" rows="4" required></textarea><br><br>
+
+        <button type="submit">Add Student</button>
+
+    </form>
+
+</div>
+
+{% endblock %}
